@@ -29,16 +29,16 @@ public class TestBase {
     @BeforeAll
     static void setUp() throws Exception {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-   //     Configuration.browser = BrowserstackMobileDriver.class.getName();
-   //     Configuration.browserSize = null;
-   //     CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-    //    String selenoidLogin = config.selenoidLogin();
-    //    String selenoidPassword = config.selenoidPassword();
-     //   String selenoidServer = System.getProperty("selenoid_server", "selenoid.autotests.cloud/wd/hub");
+        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        Configuration.browserSize = null;
+        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+        String selenoidLogin = config.selenoidLogin();
+        String selenoidPassword = config.selenoidPassword();
+        String selenoidServer = System.getProperty("selenoid_server", "selenoid.autotests.cloud/wd/hub");
         //      Configuration.baseUrl = "https://hh.ru";
         //      Configuration.browserSize = "1920x1080";
-      //  Configuration.remote = "https://" + selenoidLogin + ":" + selenoidPassword + "@" +
-     //           selenoidServer;
+        Configuration.remote = "https://" + selenoidLogin + ":" + selenoidPassword + "@" +
+                selenoidServer;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
