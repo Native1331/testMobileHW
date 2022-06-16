@@ -13,8 +13,8 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    private static String urlValue;
-    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+
+    static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
     String userValue= config.userValue();
     String keyValue=config. keyValue();
     String appValue=config.appValue();
@@ -23,6 +23,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     String projectValue=config.projectValue();
     String  buildValue=config.buildValue();
     String nameOfTest=config.nameOfTest();
+
     @Override
            public WebDriver createDriver(Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
@@ -45,8 +46,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("name", nameOfTest);
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
-
     public static URL getBrowserstackUrl() {
+         String urlValue=config.urlValue();
         try {
             return new URL(urlValue);
         } catch (MalformedURLException e) {
