@@ -9,12 +9,9 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-
+@Tag("android")
 public class SearchTitleOfQueen extends TestBase {
-
-
     @Test
-    @Tag("android")
     void searchTittleOfQueenTest() {
         back();
         step("Open search page", () -> {
@@ -28,8 +25,7 @@ public class SearchTitleOfQueen extends TestBase {
     }
 
     @Test
-    @Tag("android")
-    void searchTittleOfQA() {
+     void searchTittleOfQA() {
         step("Open search page", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("QA");

@@ -13,7 +13,6 @@ public interface CredentialsConfig extends Config {
     String projectValue();
     String  buildValue();
     String nameOfTest();
-
     String urlValue();
 }
 
