@@ -26,13 +26,14 @@ public class SearchTitleOfQueen extends TestBase {
 
     @Test
      void searchTittleOfQA() {
+        back();
         step("Open search page", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("QA");
         });
         step("Verify content found", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(CollectionCondition.sizeGreaterThan(5)));
+                $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                        .shouldHave(Condition.text("QA")));
 
     }
 }

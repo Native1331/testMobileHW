@@ -59,13 +59,8 @@ tasks.withType(Test) {
     }
 }
 
-task android(type: Test) {
-    useJUnitPlatform {
-        includeTags 'android'
-    }
-}
 task android_tests (type: Test) {
     useJUnitPlatform{
-        includeTags "hhTests"
+        includeTags "android"
     }
 }
